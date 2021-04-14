@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  agora:
+    image: "mukeunkim/agora:latest"
+    ports:
+      - "2826:2826"
+      - "2827:2827"
+    volumes:
+      - "./agora/:/agora/"
+
+  stoa:
+    image: "mukeunkim/stoa:latest"
+    depends_on:
+      - "agora"
+    ports:
+      - "3836:3836"
+    volumes:
+      - "./stoa/:/stoa/wd/"
+
+  toolsdev:
+    image: "mukeunkim/toolsdev:latest"
+    depends_on:
+      - "agora"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./toolsdev/:/toolsdev/wd/"
