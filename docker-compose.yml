@@ -24,6 +24,6 @@ services:
     depends_on:
       - "agora"
     ports:
-      - "5000:3000"
+      - "5000:5000"
     volumes:
       - "./toolsdev/:/toolsdev/wd/"
