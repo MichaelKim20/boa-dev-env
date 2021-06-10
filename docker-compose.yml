@@ -10,10 +10,22 @@ services:
     volumes:
       - "./agora/:/agora/"
 
+  mysql:
+    image: "mysql:8.0"
+    ports:
+      - "3307:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - "./stoa/data:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "12345678"
+
   stoa:
     image: "mukeunkim/stoa:latest"
     depends_on:
       - "agora"
+      - "mysql"
     ports:
       - "3836:3836"
     volumes:
