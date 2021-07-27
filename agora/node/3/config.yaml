@@ -11,7 +11,7 @@ node:
   timeout: 5000
   # Path to the data directory (if the path doesn't exist it will be created)
   data_dir: .cache
-  block_interval_sec: 60
+  block_interval_sec: 5
   block_catchup_interval_secs: 5
   relay_tx_max_num : 0
   relay_tx_interval_secs : 0
@@ -22,9 +22,11 @@ interfaces:
   - type: http
     address: 0.0.0.0
     port:    3826
-  - type: http
-    address: 0.0.0.0
-    port:    3827
+
+admin:
+  enabled: true
+  address: 0.0.0.0
+  port:    3827
 
 consensus:
   validator_cycle: 20
@@ -58,8 +60,8 @@ validator:
 ################################################################################
 network:
   # Supported value: IPv4, IPv6
-  - http://node-2:2735
-  - http://node-4:4735
-  - http://node-5:5735
-  - http://node-6:6735
-  - http://node-7:7735
+  - http://node-2:2826
+  - http://node-4:4826
+  - http://node-5:5826
+  - http://node-6:6826
+  - http://node-7:7826
