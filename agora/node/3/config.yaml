@@ -22,6 +22,9 @@ interfaces:
   - type: http
     address: 0.0.0.0
     port:    3826
+  - type: http
+    address: 0.0.0.0
+    port: 3735
 
 admin:
   enabled: true
@@ -60,8 +63,8 @@ validator:
 ################################################################################
 network:
   # Supported value: IPv4, IPv6
-  - http://node-2:2826
-  - http://node-4:4826
-  - http://node-5:5826
-  - http://node-6:6826
-  - http://node-7:7826
+  - http://node-2:2735
+  - http://node-4:4735
+  - http://node-5:5735
+  - http://node-6:6735
+  - http://node-7:7735

@@ -22,6 +22,9 @@ interfaces:
   - type: http
     address: 0.0.0.0
     port:    2826
+  - type: http
+    address: 0.0.0.0
+    port:    2735
 
 admin:
   enabled: true
@@ -60,11 +63,11 @@ validator:
 ################################################################################
 network:
   # Supported value: IPv4, IPv6
-  - http://node-3:3826
-  - http://node-4:4826
-  - http://node-5:5826
-  - http://node-6:6826
-  - http://node-7:7826
+  - http://node-3:3735
+  - http://node-4:4735
+  - http://node-5:5735
+  - http://node-6:6735
+  - http://node-7:7735
 
 event_handlers:
   # URLs to push a data when a block is externalized. (path is "/block_externalized")
