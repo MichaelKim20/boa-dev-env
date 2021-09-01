@@ -11,7 +11,6 @@ node:
   timeout: 5000
   # Path to the data directory (if the path doesn't exist it will be created)
   data_dir: .cache
-  block_interval_sec: 5
   block_catchup_interval_secs: 5
   relay_tx_max_num : 0
   relay_tx_interval_secs : 0
@@ -27,11 +26,15 @@ interfaces:
     port: 3735
 
 admin:
-  enabled: true
-  address: 0.0.0.0
+  enabled: true      # `false` by default
+  tls: false         # Use local tls context - `true` by default
+  address: 0.0.0.0   # Private
   port:    3827
+  username: admin
+  pwd: s3cr3t
 
 consensus:
+  block_interval_sec: 5
   validator_cycle: 20
 
 ################################################################################
