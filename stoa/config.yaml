@@ -9,6 +9,9 @@ database:
   database : stoa
   password : "12345678"
   port : 3306
+  waitForConnections : true
+  connectionLimit : 30
+  queueLimit : 0
 
 logging:
   folder: logs/
