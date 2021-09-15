@@ -23,7 +23,7 @@ interfaces:
 
 consensus:
   block_interval:
-    seconds: 60
+    seconds: 180
   validator_cycle: 20
 
 validator:
