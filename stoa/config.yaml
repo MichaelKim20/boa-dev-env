@@ -1,6 +1,7 @@
 server:
   address: "0.0.0.0"
-  port:    3836
+  port: 3836
+  private_port: 3837
   agora_endpoint: http://node-2:2826
 
 database:
@@ -9,6 +10,9 @@ database:
   database : stoa
   password : "12345678"
   port : 3306
+  waitForConnections : true
+  connectionLimit : 30
+  queueLimit : 0
 
 logging:
   folder: logs/
