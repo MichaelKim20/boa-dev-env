@@ -30,6 +30,7 @@ services:
       - "mysql"
     ports:
       - "3836:3836"
+      - "3837:3837"
     volumes:
       - "./stoa/:/stoa/wd/"
 
