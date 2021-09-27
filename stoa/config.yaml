@@ -3,6 +3,8 @@ server:
   port: 3836
   private_port: 3837
   agora_endpoint: http://agora:2826
+  #Votera required
+  require_votera: false
 
 database:
   host : "mysql"
@@ -23,3 +25,13 @@ logging:
 consensus:
   # 2021-01-01:00:00:00 GMT
   genesis_timestamp: 1609459200
+  # The cycle length for a validator
+  validator_cycle: 20
+
+votera:
+  # Address to which we bind (default: 127.0.0.1)
+  address: "127.0.0.1"
+  # Port on which we bind (default: 3836)
+  port: 1337
+  # Endpoint of Agora
+  votera_endpoint: http://dev-votera.bosagora.com:1337
