@@ -24,7 +24,7 @@ services:
       MYSQL_ROOT_PASSWORD: "12345678"
 
   stoa:
-    image: "boadevops/stoa:v0.1.2"
+    image: "boadevops/stoa:v0.1.3"
     depends_on:
       - "agora"
       - "mysql"
