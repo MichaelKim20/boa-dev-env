@@ -1,0 +1,262 @@
+2021-11-10 04:20:18,878 [32mInfo[0m [agora.consensus.Ledger] - Last known block: #0 (0x0a4de1e6ecb4e0b47ffa00fda1cf89968e7e9d07edb816fb4ba62550d9f2c6a1fa2d85b61d4c6df272069042996b822a552321f1e6d14f8617d1afdaf3bf5f35)
+2021-11-10 04:20:18,924 [32mInfo[0m [agora.consensus.Ledger] - Beginning externalization of block #0
+2021-11-10 04:20:18,925 [32mInfo[0m [agora.consensus.Ledger] - Transactions: 2 - Enrollments: 1
+2021-11-10 04:20:18,927 [32mInfo[0m [agora.consensus.Ledger] - Validators: Active: 0 - Signing: 0 - Slashed: 0
+2021-11-10 04:20:18,956 [32mInfo[0m [agora.consensus.Ledger] - Completed externalization of block #0
+2021-11-10 04:20:18,973 [32mInfo[0m [SCP] - LocalNode::LocalNode@0 qSet: f77137
+2021-11-10 04:20:19,00 [32mInfo[0m [SCP] - LocalNode::updateQuorumSet b7f750
+2021-11-10 04:20:19,02 [32mInfo[0m [agora.node.Runner] - Admin interface is listening on http://0.0.0.0:2827
+2021-11-10 04:20:19,02 [32mInfo[0m [agora.node.Runner] - Node is listening on interface: http://0.0.0.0:2826
+2021-11-10 04:20:19,04 [32mInfo[0m [agora.network.Manager] - Doing periodic network discovery: 0 required peers requested, 0 missing
+2021-11-10 04:20:19,05 [32mInfo[0m [agora.network.Manager] - Net time offsets: [{ key: boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh, node_time: 1636518019, req_delay: 0, offset: 0 }]
+2021-11-10 04:20:19,08 [32mInfo[0m [agora.consensus.protocol.Nominator] - Starting nominating timer..
+2021-11-10 04:20:19,58 [35mError[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Error sending block height #0 to http://stoa:3837/block_externalized :object.Exception@submodules/vibe-core/source/vibe/core/net.d(207): Failed to connect to 172.18.0.5:3837: refused
+----------------
+/usr/include/d/std/exception.d:513 pure @safe void std.exception.bailOut!(Exception).bailOut(immutable(char)[], ulong, scope const(char)[]) [0x55e5806e3e40]
+/usr/include/d/std/exception.d:433 pure @safe bool std.exception.enforce!().enforce!(bool).enforce(bool, lazy const(char)[], immutable(char)[], ulong) [0x55e5806e3dc0]
+submodules/vibe-core/source/vibe/core/net.d:180 @trusted vibe.core.net.TCPConnection vibe.core.net.connectTCP(vibe.core.net.NetworkAddress, vibe.core.net.NetworkAddress, core.time.Duration).__lambda5() [0x55e5811e5ae0]
+submodules/vibe-core/source/vibe/core/net.d:166 @safe vibe.core.net.TCPConnection vibe.core.net.connectTCP(vibe.core.net.NetworkAddress, vibe.core.net.NetworkAddress, core.time.Duration) [0x55e5811e5880]
+submodules/vibe.d/http/vibe/http/client.d:679 @safe vibe.core.net.TCPConnection vibe.http.client.connectTCPWithTimeout(vibe.core.net.NetworkAddress, vibe.core.net.NetworkAddress, core.time.Duration) [0x55e580fd1cb0]
+submodules/vibe.d/http/vibe/http/client.d:635 @safe bool vibe.http.client.HTTPClient.doRequest(scope void delegate(vibe.http.client.HTTPClientRequest), ref bool, bool, std.datetime.systime.SysTime) [0x55e580fd0f90]
+submodules/vibe.d/http/vibe/http/client.d:611 @safe bool vibe.http.client.HTTPClient.doRequestWithRetry(scope void delegate(vibe.http.client.HTTPClientRequest), bool, out bool, out std.datetime.systime.SysTime) [0x55e580fcec70]
+submodules/vibe.d/http/vibe/http/client.d:591 @safe vibe.http.client.HTTPClientResponse vibe.http.client.HTTPClient.request(scope void delegate(vibe.http.client.HTTPClientRequest)) [0x55e580fcc450]
+submodules/vibe.d/http/vibe/http/client.d:78 @safe vibe.http.client.HTTPClientResponse vibe.http.client.requestHTTP(vibe.inet.url.URL, void delegate(scope vibe.http.client.HTTPClientRequest), const(vibe.http.client.HTTPClientSettings)) [0x55e580fcb7a0]
+submodules/vibe.d/web/vibe/web/rest.d:2007 @safe vibe.http.client.HTTPClientResponse vibe.web.rest.request(vibe.inet.url.URL, void delegate(vibe.http.client.HTTPClientRequest) @safe, scope void delegate(vibe.http.client.HTTPClientRequest, scope vibe.core.stream.InputStream) @safe, vibe.http.common.HTTPMethod, immutable(char)[], scope ref const(vibe.utils.dictionarylist.DictionaryList!(immutable(char)[], false, 12uL, false).DictionaryList), immutable(char)[], immutable(char)[], ref vibe.utils.dictionarylist.DictionaryList!(immutable(char)[], false, 12uL, false).DictionaryList, ref vibe.utils.dictionarylist.DictionaryList!(immutable(char)[], false, 12uL, false).DictionaryList, in vibe.http.client.HTTPClientSettings) [0x55e580fba190]
+submodules/vibe.d/web/vibe/web/rest.d:1825 @safe void vibe.web.rest.executeClientMethod!(agora.api.Handlers.BlockExternalizedHandler, 0, vibe.web.rest.RestInterfaceClient!(agora.api.Handlers.BlockExternalizedHandler).RestInterfaceClient.__mixin19.pushBlock(const(agora.consensus.data.Block.Block)).block).executeClientMethod(scope ref const(vibe.web.internal.rest.common.RestInterface!(agora.api.Handlers.BlockExternalizedHandler).RestInterface), void delegate(vibe.http.client.HTTPClientRequest) @safe, scope void delegate(vibe.http.client.HTTPClientRequest, scope vibe.core.stream.InputStream) @safe) [0x55e580c09790]
+submodules/vibe.d/utils/vibe/internal/meta/codegen.d-mixin-301:302 @safe void vibe.web.rest.RestInterfaceClient!(agora.api.Handlers.BlockExternalizedHandler).RestInterfaceClient.__mixin19.pushBlock(const(agora.consensus.data.Block.Block)) [0x55e580c09700]
+source/agora/node/FullNode.d:1157 nothrow void agora.node.FullNode.FullNode.pushBlock(const(agora.consensus.data.Block.Block)).__foreachbody2(ref immutable(char)[], ref agora.api.Handlers.BlockExternalizedHandler).__lambda5() [0x55e5809a6b50]
+submodules/vibe-core/source/vibe/core/task.d:708 nothrow void vibe.core.task.TaskFuncInfo.set!(void delegate() nothrow).set(ref void delegate() nothrow).callDelegate(ref vibe.core.task.TaskFuncInfo) [0x55e580aee270]
+submodules/vibe-core/source/vibe/core/task.d:737 void vibe.core.task.TaskFuncInfo.call() [0x55e5812109e0]
+submodules/vibe-core/source/vibe/core/task.d:403 nothrow void vibe.core.task.TaskFiber.run() [0x55e58120fee0]
+??:? fiber_entryPoint [0x7fe804d040a0]
+2021-11-10 04:20:19,85 [32mInfo[0m [agora.network.Client.boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Peer identity established
+2021-11-10 04:20:19,86 [32mInfo[0m [agora.common.BanManager] - BanManager: Address http://agora:2826 banned until 1636604419
+2021-11-10 04:20:21,64 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Shutting down..
+2021-11-10 04:20:21,64 [32mInfo[0m [agora.common.Task] - Tasks started: 13
+2021-11-10 04:26:39,763 [32mInfo[0m [agora.consensus.Ledger] - Last known block: #0 (0x710db7c51dced26a37f258217922156b86da472ed44396efde2e2c259faa705209c3ca714c2228345fdff0beaaa0a022649991f10e21159c7718e12dd6dcb5e7)
+2021-11-10 04:26:39,774 [32mInfo[0m [SCP] - LocalNode::LocalNode@0 qSet: f77137
+2021-11-10 04:26:39,781 [32mInfo[0m [SCP] - LocalNode::updateQuorumSet b7f750
+2021-11-10 04:26:39,783 [32mInfo[0m [agora.node.Runner] - Admin interface is listening on http://0.0.0.0:2827
+2021-11-10 04:26:39,783 [32mInfo[0m [agora.node.Runner] - Node is listening on interface: http://0.0.0.0:2826
+2021-11-10 04:26:45,478 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0xfabf...13f5:0x3668...423d
+Outputs (84):
+boa1xzval2a3...gsh2(726,190.4,729,229)<Payment>, boa1xzval2a3...gsh2(726,190.4,729,229)<Payment>, boa1xzval2a3...gsh2(726,190.4,729,229)<Payment>,
+boa1xzval2a3...gsh2(726,190.4,729,229)<Payment>, boa1xzval2a3...gsh2(726,190.4,729,229)<Payment>, boa1xzval3ah...tv9n(726,190.4,729,229)<Payment>,
+boa1xzval3ah...tv9n(726,190.4,729,229)<Payment>, boa1xzval3ah...tv9n(726,190.4,729,229)<Payment>, boa1xzval3ah...tv9n(726,190.4,729,229)<Payment>,
+boa1xzval3ah...tv9n(726,190.4,729,229)<Payment>, boa1xzval4nv...6gfy(726,190.4,729,229)<Payment>, boa1xzval4nv...6gfy(726,190.4,729,229)<Payment>,
+boa1xzval4nv...6gfy(726,190.4,729,229)<Payment>, boa1xzval4nv...6gfy(726,190.4,729,229)<Payment>, boa1xzval4nv...6gfy(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>,
+boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,229)<Payment>, boa1xza007gl...9g93(726,190.4,729,293)<Payment>,
+boa1xrval5rz...jkm8(726,190.4,729,229)<Payment>, boa1xrval5rz...jkm8(726,190.4,729,229)<Payment>, boa1xrval5rz...jkm8(726,190.4,729,229)<Payment>,
+boa1xrval5rz...jkm8(726,190.4,729,229)<Payment>, boa1xrval5rz...jkm8(726,190.4,729,229)<Payment>, boa1xrval6hd...34l5(726,190.4,729,229)<Payment>,
+boa1xrval6hd...34l5(726,190.4,729,229)<Payment>, boa1xrval6hd...34l5(726,190.4,729,229)<Payment>, boa1xrval6hd...34l5(726,190.4,729,229)<Payment>,
+boa1xrval6hd...34l5(726,190.4,729,229)<Payment>, boa1xrval7gw...scrh(726,190.4,729,229)<Payment>, boa1xrval7gw...scrh(726,190.4,729,229)<Payment>,
+boa1xrval7gw...scrh(726,190.4,729,229)<Payment>, boa1xrval7gw...scrh(726,190.4,729,229)<Payment>, boa1xrval7gw...scrh(726,190.4,729,229)<Payment>, txHash: 0x4af81596e1f98d94620fbf63e2d6f93e37d090c4da2f2ccdb96a1e8e593f2dca9d5e59d16fefaa7b8c65370e1809366da936426759753365d326573cfbe9fa95
+2021-11-10 04:26:50,483 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0x1791...10db:0x172b...4d37
+Outputs (72):
+boa1xqx0039s...gyex(847,222.2,189,351)<Payment>, boa1xqg00pky...f0jt(847,222.2,189,351)<Payment>, boa1xqd00qsu...5t29(847,222.2,189,351)<Payment>,
+boa1xqw00qrx...tw8p(847,222.2,189,351)<Payment>, boa1xqs00rej...hdcq(847,222.2,189,351)<Payment>, boa1xqn000ll...z2np(847,222.2,189,351)<Payment>,
+boa1xqcy007z...fff4(847,222.2,189,351)<Payment>, boa1xqcw00qe...qesy(847,222.2,189,351)<Payment>, boa1xqcs00zf...02lz(847,222.2,189,351)<Payment>,
+boa1xqcj00xw...5mal(847,222.2,189,351)<Payment>, boa1xqcn007r...vj2h(847,222.2,189,351)<Payment>, boa1xqch00vp...vj5m(847,222.2,189,351)<Payment>,
+boa1xqcu00f4...zne4(847,222.2,189,351)<Payment>, boa1xqay00ds...7n48(847,222.2,189,351)<Payment>, boa1xqan00ly...4xnv(847,222.2,189,351)<Payment>,
+boa1xqam00nf...hwlx(847,222.2,189,351)<Payment>, boa1xqaa0092...0ema(847,222.2,189,351)<Payment>, boa1xqal0003...f4zp(847,222.2,189,351)<Payment>,
+boa1xpq00hzr...pl5c(847,222.2,189,351)<Payment>, boa1xpz00vc5...kkf4(847,222.2,189,351)<Payment>, boa1xpr00rxt...zpjp(847,222.2,189,351)<Payment>,
+boa1xpy00m8r...cvul(847,222.2,189,351)<Payment>, boa1xpt00hv2...s5tf(847,222.2,189,351)<Payment>, boa1xpdd00xp...mc2f(847,222.2,189,379)<Payment>,
+boa1xph007vh...m25k(847,222.2,189,351)<Payment>, boa1xpcq00pz...ehhc(847,222.2,189,351)<Payment>, boa1xpcz00vl...7ryc(847,222.2,189,351)<Payment>,
+boa1xpcr00mg...0mq7(847,222.2,189,351)<Payment>, boa1xpcg0029...wfnq(847,222.2,189,351)<Payment>, boa1xpcf00w8...nct5(847,222.2,189,351)<Payment>,
+boa1xpct00yh...tlgt(847,222.2,189,351)<Payment>, boa1xpcv00ek...pdes(847,222.2,189,351)<Payment>, boa1xpaf00a6...ntxw(847,222.2,189,351)<Payment>,
+boa1xpav00jh...p43k(847,222.2,189,351)<Payment>, boa1xpas00zg...p9g3(847,222.2,189,351)<Payment>, boa1xpaj00zf...c37t(847,222.2,189,351)<Payment>,
+boa1xpah00hl...yakd(847,222.2,189,351)<Payment>, boa1xpau00fy...m03s(847,222.2,189,351)<Payment>, boa1xzf00xqr...70l2(847,222.2,189,351)<Payment>,
+boa1xzv00g8k...t2py(847,222.2,189,351)<Payment>, boa1xzcp004f...2436(847,222.2,189,351)<Payment>, boa1xzcx009a...8avy(847,222.2,189,351)<Payment>,
+boa1xzcd00f8...7p64(847,222.2,189,351)<Payment>, boa1xzck00rq...snk2(847,222.2,189,351)<Payment>, boa1xzcc00nz...wl0j(847,222.2,189,351)<Payment>,
+boa1xzce00jf...tf0e(847,222.2,189,351)<Payment>, boa1xzcm00ny...qu6q(847,222.2,189,351)<Payment>, boa1xzca00zk...atgp(847,222.2,189,351)<Payment>,
+boa1xzcl0065...4pgf(847,222.2,189,351)<Payment>, boa1xzm00zy4...g5h8(847,222.2,189,351)<Payment>, boa1xzu00x9m...2zah(847,222.2,189,351)<Payment>,
+boa1xzaq0097...wxpa(847,222.2,189,351)<Payment>, boa1xzar00gt...3jj8(847,222.2,189,351)<Payment>, boa1xzat00p6...e5yp(847,222.2,189,351)<Payment>,
+boa1xzad00g0...sf76(847,222.2,189,351)<Payment>, boa1xzaw003h...xm98(847,222.2,189,351)<Payment>, boa1xza007gl...9g93(847,222.2,189,351)<Payment>,
+boa1xzac00c7...nwa8(847,222.2,189,351)<Payment>, boa1xrp00xtu...4v92(847,222.2,189,351)<Payment>, boa1xrdc003e...gxz6(847,222.2,189,351)<Payment>,
+boa1xrda008g...ya03(847,222.2,189,351)<Payment>, boa1xrj0050f...er6u(847,222.2,189,351)<Payment>, boa1xrk00cup...ms8q(847,222.2,189,351)<Payment>,
+boa1xrc00kar...9lkl(847,222.2,189,351)<Payment>, boa1xre00xg0...ly2r(847,222.2,189,351)<Payment>, boa1xrap00gy...eew9(847,222.2,189,351)<Payment>,
+boa1xraz00fk...zuct(847,222.2,189,351)<Payment>, boa1xrax00ve...5qgt(847,222.2,189,351)<Payment>, boa1xrag00ha...r8cp(847,222.2,189,351)<Payment>,
+boa1xrak008f...4zrh(847,222.2,189,351)<Payment>, boa1xrae007p...3w7u(847,222.2,189,351)<Payment>, boa1xrl00g8w...8hpd(847,222.2,189,351)<Payment>, txHash: 0xabf365ebca612dfc90039f5ea919666798f5afe8129f53a35261d37a91d2c6ac4402c5b0f4d58999a9c281a94e2a757a822537dc674a94c6aad696d07cc07adc
+2021-11-10 04:26:55,524 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0x3365...4a69:0x7139...0095
+Outputs (72):
+boa1xqgf003p...s7qu(847,222.2,189,351)<Payment>, boa1xqgc00ex...6mrl(847,222.2,189,351)<Payment>, boa1xqfs008p...lwmr(847,222.2,189,351)<Payment>,
+boa1xqfn00yp...zvk5(847,222.2,189,351)<Payment>, boa1xqfk00x4...achy(847,222.2,189,351)<Payment>, boa1xqfh009d...e3ze(847,222.2,189,351)<Payment>,
+boa1xqfc00sy...96tw(847,222.2,189,351)<Payment>, boa1xqdn00fr...r9wf(847,222.2,189,351)<Payment>, boa1xqdh00q9...nl6r(847,222.2,189,351)<Payment>,
+boa1xqey0079...60qq(847,222.2,189,351)<Payment>, boa1xqev000a...su4f(847,222.2,189,351)<Payment>, boa1xqej00jh...mxzu(847,222.2,189,351)<Payment>,
+boa1xqeu00d7...zlr8(847,222.2,189,351)<Payment>, boa1xqea00py...dnfv(847,222.2,189,351)<Payment>, boa1xpge006c...0qj5(847,222.2,189,351)<Payment>,
+boa1xpfq00t5...h4e8(847,222.2,189,351)<Payment>, boa1xpfp00tr...92jq(847,222.2,189,351)<Payment>, boa1xpfr005h...ah6p(847,222.2,189,351)<Payment>,
+boa1xpfg00n0...eua6(847,222.2,189,351)<Payment>, boa1xpff00yz...fjkm(847,222.2,189,351)<Payment>, boa1xpfj003y...tryp(847,222.2,189,351)<Payment>,
+boa1xpfa000h...7n8f(847,222.2,189,351)<Payment>, boa1xpdz00yc...azls(847,222.2,189,351)<Payment>, boa1xpds0074...utzt(847,222.2,189,351)<Payment>,
+boa1xpdm005h...8p4g(847,222.2,189,351)<Payment>, boa1xpes00hn...ftjx(847,222.2,189,351)<Payment>, boa1xpec00ru...dx9m(847,222.2,189,351)<Payment>,
+boa1xpee00vd...hve0(847,222.2,189,351)<Payment>, boa1xpel00xr...u546(847,222.2,189,351)<Payment>, boa1xzgg00zd...ttdz(847,222.2,189,379)<Payment>,
+boa1xzgd00t6...ww8c(847,222.2,189,351)<Payment>, boa1xzfy008e...59g0(847,222.2,189,351)<Payment>, boa1xzfv00s8...sga3(847,222.2,189,351)<Payment>,
+boa1xzfm00dd...xy9a(847,222.2,189,351)<Payment>, boa1xzfu00ga...3zdy(847,222.2,189,351)<Payment>, boa1xzdp0049...6rn0(847,222.2,189,351)<Payment>,
+boa1xzdy00st...f8cp(847,222.2,189,351)<Payment>, boa1xzdx00ch...kdf2(847,222.2,189,351)<Payment>, boa1xzdt00cf...qcy3(847,222.2,189,351)<Payment>,
+boa1xzde00jw...t62d(847,222.2,189,351)<Payment>, boa1xzdu0085...e933(847,222.2,189,351)<Payment>, boa1xzdl00w6...7mh0(847,222.2,189,351)<Payment>,
+boa1xzep00ev...85my(847,222.2,189,351)<Payment>, boa1xzez00fn...x3m2(847,222.2,189,351)<Payment>, boa1xzex00mh...h4tm(847,222.2,189,351)<Payment>,
+boa1xzef00ty...jxuu(847,222.2,189,351)<Payment>, boa1xzew00c2...lr5g(847,222.2,189,351)<Payment>, boa1xzeh00nk...4v6p(847,222.2,189,351)<Payment>,
+boa1xrga00na...fk69(847,222.2,189,351)<Payment>, boa1xrfz00mt...lzl6(847,222.2,189,351)<Payment>, boa1xrfx00a4...v5me(847,222.2,189,351)<Payment>,
+boa1xrft007p...tgrs(847,222.2,189,351)<Payment>, boa1xrfd0066...kvd2(847,222.2,189,351)<Payment>, boa1xrfw002v...k3d4(847,222.2,189,351)<Payment>,
+boa1xrfe00at...c0k8(847,222.2,189,351)<Payment>, boa1xrfl00xm...vv77(847,222.2,189,351)<Payment>, boa1xrdq00mt...cl58(847,222.2,189,351)<Payment>,
+boa1xrdr003x...uexd(847,222.2,189,351)<Payment>, boa1xrdg00us...99wh(847,222.2,189,351)<Payment>, boa1xrdf00kt...c9l4(847,222.2,189,351)<Payment>,
+boa1xrdv00w4...tjnk(847,222.2,189,351)<Payment>, boa1xrdw0032...ka8r(847,222.2,189,351)<Payment>, boa1xrdj000s...5wa4(847,222.2,189,351)<Payment>,
+boa1xrdk008k...ts04(847,222.2,189,351)<Payment>, boa1xreq00f9...4t9u(847,222.2,189,351)<Payment>, boa1xrer00je...fln7(847,222.2,189,351)<Payment>,
+boa1xreg0088...w4ml(847,222.2,189,351)<Payment>, boa1xret004j...7apf(847,222.2,189,351)<Payment>, boa1xred00q7...4uee(847,222.2,189,351)<Payment>,
+boa1xren00hu...kzj9(847,222.2,189,351)<Payment>, boa1xrek007n...zxwp(847,222.2,189,351)<Payment>, boa1xrem00vn...0pyc(847,222.2,189,351)<Payment>, txHash: 0x178b43a015541ec9ac4518c717f90c6168c2f15e3980079dbfac48c2c94169df3caadbfca4a7eb3ae337ef7da7f3e23fd43bcaaf4da4019dee1faa415851d38b
+2021-11-10 04:27:00,561 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0x359a...f346:0x8c85...5168
+Outputs (72):
+boa1xqgz00x9...hy09(847,222.2,189,351)<Payment>, boa1xqgx000r...sxrx(847,222.2,189,351)<Payment>, boa1xqgt009y...u3r4(847,222.2,189,351)<Payment>,
+boa1xqgw00pu...4ffz(847,222.2,189,351)<Payment>, boa1xqgj006m...g8jv(847,222.2,189,351)<Payment>, boa1xqgk00z5...ssg2(847,222.2,189,351)<Payment>,
+boa1xqgh0092...h9rw(847,222.2,189,351)<Payment>, boa1xqjt00va...2c2s(847,222.2,189,351)<Payment>, boa1xqjs00aw...ztuz(847,222.2,189,351)<Payment>,
+boa1xqjh00zn...u9px(847,222.2,189,351)<Payment>, boa1xqje00uc...2xd4(847,222.2,189,351)<Payment>, boa1xqkg00gm...e0s8(847,222.2,189,351)<Payment>,
+boa1xqkf00fh...tjvx(847,222.2,189,351)<Payment>, boa1xqkk0037...a2yk(847,222.2,189,379)<Payment>, boa1xqkc00ed...hver(847,222.2,189,351)<Payment>,
+boa1xqka00et...pudc(847,222.2,189,351)<Payment>, boa1xqhq00za...7hrc(847,222.2,189,351)<Payment>, boa1xqhz007n...82er(847,222.2,189,351)<Payment>,
+boa1xqhy0099...0359(847,222.2,189,351)<Payment>, boa1xqhd00z2...fe4c(847,222.2,189,351)<Payment>, boa1xqhj00k7...qsf5(847,222.2,189,351)<Payment>,
+boa1xqhm00ms...tds9(847,222.2,189,351)<Payment>, boa1xqhu002z...f44c(847,222.2,189,351)<Payment>, boa1xpgq00er...6hvj(847,222.2,189,351)<Payment>,
+boa1xpgy003c...xl3r(847,222.2,189,351)<Payment>, boa1xpgs00e0...y3rn(847,222.2,189,351)<Payment>, boa1xpgu00zg...f6w2(847,222.2,189,351)<Payment>,
+boa1xpjy00vl...lhly(847,222.2,189,351)<Payment>, boa1xpjg00ts...hfnx(847,222.2,189,351)<Payment>, boa1xpjf0033...x4nu(847,222.2,189,351)<Payment>,
+boa1xpjw000a...y9df(847,222.2,189,351)<Payment>, boa1xpjj00uz...sumc(847,222.2,189,351)<Payment>, boa1xpjn00xk...r53j(847,222.2,189,351)<Payment>,
+boa1xpjm0049...6n6p(847,222.2,189,351)<Payment>, boa1xpjl00fw...3lck(847,222.2,189,351)<Payment>, boa1xphg00t6...8a4j(847,222.2,189,351)<Payment>,
+boa1xphf00zl...xzgu(847,222.2,189,351)<Payment>, boa1xpht00yk...tp45(847,222.2,189,351)<Payment>, boa1xphv000e...8pup(847,222.2,189,351)<Payment>,
+boa1xphs00j3...4696(847,222.2,189,351)<Payment>, boa1xzgp00ca...50hf(847,222.2,189,351)<Payment>, boa1xzgr00vk...9ehx(847,222.2,189,351)<Payment>,
+boa1xzgn0083...p9hq(847,222.2,189,351)<Payment>, boa1xzjz00w2...74u8(847,222.2,189,351)<Payment>, boa1xzjv009t...a2td(847,222.2,189,351)<Payment>,
+boa1xzjd00w7...k4w8(847,222.2,189,351)<Payment>, boa1xzjk00j4...wety(847,222.2,189,351)<Payment>, boa1xzjc0004...u2sh(847,222.2,189,351)<Payment>,
+boa1xzju00fv...eqcn(847,222.2,189,351)<Payment>, boa1xzkd00lq...8lm4(847,222.2,189,351)<Payment>, boa1xzkh00da...zfx6(847,222.2,189,351)<Payment>,
+boa1xzhp00uy...lxnm(847,222.2,189,351)<Payment>, boa1xzhn00ts...jvye(847,222.2,189,351)<Payment>, boa1xzhl00sx...mw3g(847,222.2,189,351)<Payment>,
+boa1xrgv00u3...z8wj(847,222.2,189,351)<Payment>, boa1xrgm00a2...3htk(847,222.2,189,351)<Payment>, boa1xrgl00er...3s4k(847,222.2,189,351)<Payment>,
+boa1xrjq00fx...wsj0(847,222.2,189,351)<Payment>, boa1xrjp00yy...6mer(847,222.2,189,351)<Payment>, boa1xrjr009t...nvfh(847,222.2,189,351)<Payment>,
+boa1xrjx00x0...gkx9(847,222.2,189,351)<Payment>, boa1xrja00k5...29gc(847,222.2,189,351)<Payment>, boa1xrkj00t4...pge2(847,222.2,189,351)<Payment>,
+boa1xrke002p...ww8d(847,222.2,189,351)<Payment>, boa1xrhr009q...yde6(847,222.2,189,351)<Payment>, boa1xrhx00pp...vrj7(847,222.2,189,351)<Payment>,
+boa1xrhw00qr...9dfz(847,222.2,189,351)<Payment>, boa1xrhk00de...mrxl(847,222.2,189,351)<Payment>, boa1xrhh00jd...tt6j(847,222.2,189,351)<Payment>,
+boa1xrhc00kj...s059(847,222.2,189,351)<Payment>, boa1xrhe005p...xdys(847,222.2,189,351)<Payment>, boa1xrha00tg...8lu9(847,222.2,189,351)<Payment>, txHash: 0x841dbcce2416e6977fa3e462c896c7a0a96e4a02ec8a891dfeb34113313033c59db6dd33e81c9c0e2f9304c4c89bcc25323a3a2ce2464d2145a0a9638076ae0f
+2021-11-10 04:33:09,712 [32mInfo[0m [agora.consensus.Ledger] - Last known block: #0 (0x710db7c51dced26a37f258217922156b86da472ed44396efde2e2c259faa705209c3ca714c2228345fdff0beaaa0a022649991f10e21159c7718e12dd6dcb5e7)
+2021-11-10 04:33:09,722 [32mInfo[0m [SCP] - LocalNode::LocalNode@0 qSet: f77137
+2021-11-10 04:33:09,733 [32mInfo[0m [SCP] - LocalNode::updateQuorumSet b7f750
+2021-11-10 04:33:09,736 [32mInfo[0m [agora.node.Runner] - Admin interface is listening on http://0.0.0.0:2827
+2021-11-10 04:33:09,737 [32mInfo[0m [agora.node.Runner] - Node is listening on interface: http://0.0.0.0:2826
+2021-11-10 04:33:36,400 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0x3c18...53b8:0x50de...9445
+Outputs (72):
+boa1xqne00f2...0fna(847,222.2,189,351)<Payment>, boa1xqnl00fr...qqnc(847,222.2,189,351)<Payment>, boa1xqkp00rx...n9y0(847,222.2,189,351)<Payment>,
+boa1xqky002p...qq6u(847,222.2,189,351)<Payment>, boa1xqmq00qd...umj8(847,222.2,189,351)<Payment>, boa1xqmp00fv...0sqs(847,222.2,189,351)<Payment>,
+boa1xqmz00w7...zrwn(847,222.2,189,351)<Payment>, boa1xqmx0055...jk56(847,222.2,189,351)<Payment>, boa1xqmt00ga...j68n(847,222.2,189,351)<Payment>,
+boa1xqmv00h2...mvls(847,222.2,189,351)<Payment>, boa1xqme00fs...8z7f(847,222.2,189,351)<Payment>, boa1xqml00qm...jxal(847,222.2,189,351)<Payment>,
+boa1xqlz00ve...r2cv(847,222.2,189,351)<Payment>, boa1xqlg009s...7y9p(847,222.2,189,351)<Payment>, boa1xqls00px...8fff(847,222.2,189,351)<Payment>,
+boa1xqlh00hk...nund(847,222.2,189,351)<Payment>, boa1xqlm00e8...735v(847,222.2,189,351)<Payment>, boa1xqll00rk...cptx(847,222.2,189,351)<Payment>,
+boa1xpng00zc...f9wt(847,222.2,189,351)<Payment>, boa1xpnd00x6...kj2e(847,222.2,189,351)<Payment>, boa1xpnj00wa...08s3(847,222.2,189,351)<Payment>,
+boa1xpnk00ff...fqpz(847,222.2,189,351)<Payment>, boa1xpkq00s3...hkv6(847,222.2,189,351)<Payment>, boa1xpkx00yc...z3h0(847,222.2,189,351)<Payment>,
+boa1xpkt00gl...telj(847,222.2,189,351)<Payment>, boa1xpkv00cl...ln66(847,222.2,189,351)<Payment>, boa1xpkn00qj...kudc(847,222.2,189,351)<Payment>,
+boa1xpkm00kq...3qng(847,222.2,189,351)<Payment>, boa1xpmd00ul...vzsx(847,222.2,189,351)<Payment>, boa1xpmn00an...68zm(847,222.2,189,351)<Payment>,
+boa1xpmk00z6...qxdw(847,222.2,189,351)<Payment>, boa1xpma00kv...400a(847,222.2,189,351)<Payment>, boa1xplp00jm...902h(847,222.2,189,351)<Payment>,
+boa1xplt00s9...n33n(847,222.2,189,351)<Payment>, boa1xplv00fr...rvhg(847,222.2,189,351)<Payment>, boa1xplw00ml...xady(847,222.2,189,351)<Payment>,
+boa1xpln002l...qxlw(847,222.2,189,351)<Payment>, boa1xplk00te...8y98(847,222.2,189,351)<Payment>, boa1xplc0082...hnr8(847,222.2,189,351)<Payment>,
+boa1xpla00fr...6nte(847,222.2,189,351)<Payment>, boa1xznc00ga...kfhz(847,222.2,189,351)<Payment>, boa1xzna00zg...l0jk(847,222.2,189,351)<Payment>,
+boa1xzkz00p4...jptv(847,222.2,189,351)<Payment>, boa1xzks000h...r3aw(847,222.2,189,351)<Payment>, boa1xzku00sa...z25t(847,222.2,189,351)<Payment>,
+boa1xzmr009j...hcme(847,222.2,189,351)<Payment>, boa1xzmy00p8...n6an(847,222.2,189,351)<Payment>, boa1xzmg006d...2ljv(847,222.2,189,351)<Payment>,
+boa1xzmf00v7...gemm(847,222.2,189,351)<Payment>, boa1xzmw00l9...s966(847,222.2,189,351)<Payment>, boa1xzms00qp...l59n(847,222.2,189,351)<Payment>,
+boa1xzmh008x...nwu3(847,222.2,189,351)<Payment>, boa1xzmm00p7...2nra(847,222.2,189,351)<Payment>, boa1xzmu00mg...v0pn(847,222.2,189,351)<Payment>,
+boa1xzlr00rh...el05(847,222.2,189,351)<Payment>, boa1xzlx00lg...xllk(847,222.2,189,351)<Payment>, boa1xzlf00ql...h9d2(847,222.2,189,351)<Payment>,
+boa1xzld00wc...ltc8(847,222.2,189,351)<Payment>, boa1xrnf00cq...2uuj(847,222.2,189,351)<Payment>, boa1xrnn0026...l2l9(847,222.2,189,379)<Payment>,
+boa1xrnh00qx...k6jj(847,222.2,189,351)<Payment>, boa1xrnm00uh...hny5(847,222.2,189,351)<Payment>, boa1xrkr00uc...9lre(847,222.2,189,351)<Payment>,
+boa1xrkw0032...5hfj(847,222.2,189,351)<Payment>, boa1xrkl00u3...3ksg(847,222.2,189,351)<Payment>, boa1xrmj00eh...m5r9(847,222.2,189,351)<Payment>,
+boa1xrmc006s...3g9v(847,222.2,189,351)<Payment>, boa1xrlq00k2...h9p9(847,222.2,189,351)<Payment>, boa1xrly00dx...4afz(847,222.2,189,351)<Payment>,
+boa1xrlj00v7...stea(847,222.2,189,351)<Payment>, boa1xrle000n...ejm6(847,222.2,189,351)<Payment>, boa1xrlu00hf...n5mz(847,222.2,189,351)<Payment>, txHash: 0x2e09561cf04798a0c3d6027798d90c3f5a3ea31e74ae9e590028e4444ba2cd4cae8e5b97c208817f438c936554f48ffc53d9920054af958757f24d49854fa76e
+2021-11-10 04:33:41,440 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0x5671...a79e:0x404d...6d41
+Outputs (72):
+boa1xqqy00xa...v5uh(847,222.2,189,351)<Payment>, boa1xqqg00k4...h2dr(847,222.2,189,351)<Payment>, boa1xqqw00ld...nq4t(847,222.2,189,351)<Payment>,
+boa1xqqa00js...xs5t(847,222.2,189,351)<Payment>, boa1xqql00dp...pu3y(847,222.2,189,351)<Payment>, boa1xqpx0039...02u4(847,222.2,189,351)<Payment>,
+boa1xqpt00e4...fxa6(847,222.2,189,351)<Payment>, boa1xqpd003v...g2ns(847,222.2,189,351)<Payment>, boa1xqph00jm...knrz(847,222.2,189,351)<Payment>,
+boa1xqpm00ru...gpmq(847,222.2,189,351)<Payment>, boa1xqrr00xn...vhwt(847,222.2,189,379)<Payment>, boa1xqrk00y3...ml7p(847,222.2,189,351)<Payment>,
+boa1xqnp0066...n72v(847,222.2,189,351)<Payment>, boa1xqny00e3...uc27(847,222.2,189,351)<Payment>, boa1xqnt00fw...wqnd(847,222.2,189,351)<Payment>,
+boa1xqnu005s...mj0w(847,222.2,189,351)<Payment>, boa1xpqz00u5...ygrp(847,222.2,189,351)<Payment>, boa1xpqx004z...ymay(847,222.2,189,351)<Payment>,
+boa1xpqt00m8...ynkt(847,222.2,189,351)<Payment>, boa1xpqv00dv...klyg(847,222.2,189,351)<Payment>, boa1xpqd00y5...2jks(847,222.2,189,351)<Payment>,
+boa1xpqn007h...f4hu(847,222.2,189,351)<Payment>, boa1xpqk00xf...hhk8(847,222.2,189,351)<Payment>, boa1xpqe00y8...853k(847,222.2,189,351)<Payment>,
+boa1xppp009a...w8k0(847,222.2,189,351)<Payment>, boa1xppz00cv...4cxq(847,222.2,189,351)<Payment>, boa1xppr00zt...d7nl(847,222.2,189,351)<Payment>,
+boa1xppf00a7...gm3r(847,222.2,189,351)<Payment>, boa1xppj00nz...sq9r(847,222.2,189,351)<Payment>, boa1xppn00g7...8rk9(847,222.2,189,351)<Payment>,
+boa1xppk006g...y9sn(847,222.2,189,351)<Payment>, boa1xppe006m...sv4f(847,222.2,189,351)<Payment>, boa1xppl0033...f2ga(847,222.2,189,351)<Payment>,
+boa1xprg00hy...qvwg(847,222.2,189,351)<Payment>, boa1xprm00ky...arm8(847,222.2,189,351)<Payment>, boa1xprl00ku...xt7j(847,222.2,189,351)<Payment>,
+boa1xpnv000f...q8v6(847,222.2,189,351)<Payment>, boa1xzqq00x6...08x9(847,222.2,189,351)<Payment>, boa1xzqp002z...jgd6(847,222.2,189,351)<Payment>,
+boa1xzqr00te...7ca8(847,222.2,189,351)<Payment>, boa1xzqh00x2...kwqr(847,222.2,189,351)<Payment>, boa1xzqu00nh...l7k7(847,222.2,189,351)<Payment>,
+boa1xzpq00hq...6svf(847,222.2,189,351)<Payment>, boa1xzpy00yg...py94(847,222.2,189,351)<Payment>, boa1xzpg009t...re80(847,222.2,189,351)<Payment>,
+boa1xzpu00ca...wpyk(847,222.2,189,351)<Payment>, boa1xzrq00cq...j62p(847,222.2,189,351)<Payment>, boa1xzrf00m4...2d2d(847,222.2,189,351)<Payment>,
+boa1xzrn0066...2845(847,222.2,189,351)<Payment>, boa1xzrh00v0...d7mc(847,222.2,189,351)<Payment>, boa1xzrc00ue...lqwg(847,222.2,189,351)<Payment>,
+boa1xzre000t...ejmg(847,222.2,189,351)<Payment>, boa1xzra00te...5ayg(847,222.2,189,351)<Payment>, boa1xznq00em...vm0n(847,222.2,189,351)<Payment>,
+boa1xznz00rh...nf2t(847,222.2,189,351)<Payment>, boa1xznr0009...t5s7(847,222.2,189,351)<Payment>, boa1xznx00yq...fmye(847,222.2,189,351)<Payment>,
+boa1xzns004l...c3su(847,222.2,189,351)<Payment>, boa1xrqf00qn...sfyw(847,222.2,189,351)<Payment>, boa1xrqs000k...43js(847,222.2,189,351)<Payment>,
+boa1xrqj00up...tmxg(847,222.2,189,351)<Payment>, boa1xrqc00lu...w3ff(847,222.2,189,351)<Payment>, boa1xrqm00d3...yn0v(847,222.2,189,351)<Payment>,
+boa1xrpv00hu...r7as(847,222.2,189,351)<Payment>, boa1xrpw002q...hza6(847,222.2,189,351)<Payment>, boa1xrps007e...y3rf(847,222.2,189,351)<Payment>,
+boa1xrpc00j5...y3f0(847,222.2,189,351)<Payment>, boa1xrpa00ha...cvpz(847,222.2,189,351)<Payment>, boa1xrrp009g...m77k(847,222.2,189,351)<Payment>,
+boa1xrrd00mr...wfh5(847,222.2,189,351)<Payment>, boa1xrrj000f...6jjn(847,222.2,189,351)<Payment>, boa1xrnw00zm...qx0n(847,222.2,189,351)<Payment>, txHash: 0x54605faef597546c141bd73ab151e6d8e73f746a44032adab79c8f0f678b039d33b003cbb6f8eea472742941114427724633b9681c543f849eb69cb4b3af48fb
+2021-11-10 04:33:46,480 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0x6258...2197:0xe56b...7fa0
+Outputs (72):
+boa1xqrz00c8...yyzc(847,222.2,189,351)<Payment>, boa1xqrx00xg...z2zr(847,222.2,189,351)<Payment>, boa1xqrv00dp...u925(847,222.2,189,351)<Payment>,
+boa1xqrw009m...m02l(847,222.2,189,351)<Payment>, boa1xqtp00ye...vg40(847,222.2,189,351)<Payment>, boa1xqtx00e3...te8t(847,222.2,189,351)<Payment>,
+boa1xqtg00l8...xnwr(847,222.2,189,351)<Payment>, boa1xqtt00ry...q5cw(847,222.2,189,351)<Payment>, boa1xqtv00av...9tpz(847,222.2,189,351)<Payment>,
+boa1xqtk005f...nllf(847,222.2,189,351)<Payment>, boa1xqsq00c8...2hqf(847,222.2,189,351)<Payment>, boa1xqsp0086...lj59(847,222.2,189,351)<Payment>,
+boa1xqsz00dd...ccp3(847,222.2,189,351)<Payment>, boa1xqsx00qp...hlnn(847,222.2,189,351)<Payment>, boa1xqsd003w...r6nu(847,222.2,189,351)<Payment>,
+boa1xqsh00m8...hzvy(847,222.2,189,351)<Payment>, boa1xqud00h7...ykzz(847,222.2,189,351)<Payment>, boa1xqua0049...h5c5(847,222.2,189,351)<Payment>,
+boa1xprs006v...ae6t(847,222.2,189,351)<Payment>, boa1xpru00hh...9gl0(847,222.2,189,351)<Payment>, boa1xptr00tr...3xjm(847,222.2,189,351)<Payment>,
+boa1xptw00ha...g5a4(847,222.2,189,351)<Payment>, boa1xptj00wp...msuv(847,222.2,189,351)<Payment>, boa1xptn00s6...vlql(847,222.2,189,351)<Payment>,
+boa1xptu00y7...87cw(847,222.2,189,351)<Payment>, boa1xptl00u4...tlne(847,222.2,189,351)<Payment>, boa1xpsg006p...gek6(847,222.2,189,351)<Payment>,
+boa1xpst00px...l3qd(847,222.2,189,351)<Payment>, boa1xpsj00y7...cyl8(847,222.2,189,351)<Payment>, boa1xpsc00le...e7f0(847,222.2,189,351)<Payment>,
+boa1xpsm00ja...vkat(847,222.2,189,351)<Payment>, boa1xpsa00p4...cf3y(847,222.2,189,351)<Payment>, boa1xpuk0092...jmx8(847,222.2,189,351)<Payment>,
+boa1xpuh00qg...3z6j(847,222.2,189,351)<Payment>, boa1xpum0025...m7th(847,222.2,189,351)<Payment>, boa1xpul00ad...26tw(847,222.2,189,351)<Payment>,
+boa1xzry00h0...unmn(847,222.2,189,351)<Payment>, boa1xzrt000e...f8mh(847,222.2,189,351)<Payment>, boa1xztq00ex...lrna(847,222.2,189,351)<Payment>,
+boa1xztz00u7...xzyk(847,222.2,189,351)<Payment>, boa1xzty00gt...3ap7(847,222.2,189,351)<Payment>, boa1xztd006s...k8lf(847,222.2,189,351)<Payment>,
+boa1xzts00eg...kqv2(847,222.2,189,351)<Payment>, boa1xzth00s5...xzew(847,222.2,189,351)<Payment>, boa1xztc00q6...66pw(847,222.2,189,351)<Payment>,
+boa1xzsy00xn...wfyx(847,222.2,189,351)<Payment>, boa1xzsf00nn...qwjh(847,222.2,189,351)<Payment>, boa1xzsv00n3...mx8m(847,222.2,189,351)<Payment>,
+boa1xzsl000x...j65y(847,222.2,189,351)<Payment>, boa1xzur00de...7cnq(847,222.2,189,351)<Payment>, boa1xzuf00z8...3cyx(847,222.2,189,351)<Payment>,
+boa1xzuc00wf...0lee(847,222.2,189,351)<Payment>, boa1xzuu00qn...j7m5(847,222.2,189,379)<Payment>, boa1xrtf00ry...4723(847,222.2,189,351)<Payment>,
+boa1xrte00rj...seun(847,222.2,189,351)<Payment>, boa1xrtm009f...g5z8(847,222.2,189,351)<Payment>, boa1xrta0047...ghut(847,222.2,189,351)<Payment>,
+boa1xrsr0043...xpw6(847,222.2,189,351)<Payment>, boa1xrsw00xm...38rw(847,222.2,189,351)<Payment>, boa1xrss00wd...m2x2(847,222.2,189,351)<Payment>,
+boa1xrsn00ks...lm7v(847,222.2,189,351)<Payment>, boa1xrsk00g4...9jyx(847,222.2,189,351)<Payment>, boa1xrse00pr...xntu(847,222.2,189,351)<Payment>,
+boa1xrsu008f...s7ca(847,222.2,189,351)<Payment>, boa1xruq00nm...wvg6(847,222.2,189,351)<Payment>, boa1xrup00z3...k6h7(847,222.2,189,351)<Payment>,
+boa1xrug0046...h9kk(847,222.2,189,351)<Payment>, boa1xrut008k...gyy3(847,222.2,189,351)<Payment>, boa1xrus00vt...88dt(847,222.2,189,351)<Payment>,
+boa1xruj00aq...cd94(847,222.2,189,351)<Payment>, boa1xrun00rl...e3jd(847,222.2,189,351)<Payment>, boa1xrue00xp...2s46(847,222.2,189,351)<Payment>, txHash: 0x927f49180d35894f86bc36fd2588306432f3c432d108dca515bf471ce7a51b2ad3ee8dc9e75ad03f2fae869665bfabb678e7d536a9f19d099a848c572fc3dfed
+2021-11-10 04:33:51,503 [32mInfo[0m [boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh] - Accepted tx: Inputs (1): 0xb979...d9ca:0x0d54...f9df
+Outputs (72):
+boa1xqxq00vd...erkd(847,222.2,189,351)<Payment>, boa1xqxr00tc...udjk(847,222.2,189,351)<Payment>, boa1xqxt009u...sdh3(847,222.2,189,351)<Payment>,
+boa1xqxu00lm...ek9h(847,222.2,189,351)<Payment>, boa1xqxa00zc...68dt(847,222.2,189,351)<Payment>, boa1xqxl005a...ssdn(847,222.2,189,351)<Payment>,
+boa1xqvq00wf...ua3v(847,222.2,189,351)<Payment>, boa1xqvx00j9...jyv2(847,222.2,189,351)<Payment>, boa1xqvg00z5...yvdm(847,222.2,189,351)<Payment>,
+boa1xqvj00qk...0fh7(847,222.2,189,351)<Payment>, boa1xqvk004x...vcn8(847,222.2,189,351)<Payment>, boa1xqvm009f...4djq(847,222.2,189,351)<Payment>,
+boa1xqwz007s...x3cz(847,222.2,189,351)<Payment>, boa1xqws002z...l8j6(847,222.2,189,351)<Payment>, boa1xqwh00y7...rasf(847,222.2,189,351)<Payment>,
+boa1xqwc003r...0ptq(847,222.2,189,351)<Payment>, boa1xqwu004z...pjww(847,222.2,189,351)<Payment>, boa1xqux00qe...c2jm(847,222.2,189,351)<Payment>,
+boa1xpxx007e...krah(847,222.2,189,379)<Payment>, boa1xpxv0097...umdu(847,222.2,189,351)<Payment>, boa1xpxc00kv...akp6(847,222.2,189,351)<Payment>,
+boa1xpvp00fm...554l(847,222.2,189,351)<Payment>, boa1xpvv00r9...nhgx(847,222.2,189,351)<Payment>, boa1xpvd00q2...9dhl(847,222.2,189,351)<Payment>,
+boa1xpvn008w...30jf(847,222.2,189,351)<Payment>, boa1xpvc00wl...f2z2(847,222.2,189,351)<Payment>, boa1xpvl00lk...vvm4(847,222.2,189,351)<Payment>,
+boa1xpwx00tk...v9dv(847,222.2,189,351)<Payment>, boa1xpwg00me...40xu(847,222.2,189,351)<Payment>, boa1xpwd00vm...fxdz(847,222.2,189,351)<Payment>,
+boa1xpwj00kd...8s2c(847,222.2,189,351)<Payment>, boa1xpwk007k...u2xy(847,222.2,189,351)<Payment>, boa1xpwl00cs...7gaz(847,222.2,189,351)<Payment>,
+boa1xzxp00ga...jrxm(847,222.2,189,351)<Payment>, boa1xzxf00v5...80fm(847,222.2,189,351)<Payment>, boa1xzxd004k...kpsa(847,222.2,189,351)<Payment>,
+boa1xzxs00y7...65tj(847,222.2,189,351)<Payment>, boa1xzxh00jg...fd56(847,222.2,189,351)<Payment>, boa1xzxm00hw...gpw8(847,222.2,189,351)<Payment>,
+boa1xzvr00tk...s3ft(847,222.2,189,351)<Payment>, boa1xzvf00wj...flzl(847,222.2,189,351)<Payment>, boa1xzvt0028...7xsc(847,222.2,189,351)<Payment>,
+boa1xzvh00yc...6k9j(847,222.2,189,351)<Payment>, boa1xzve006q...2kfj(847,222.2,189,351)<Payment>, boa1xzvu00eg...xw9k(847,222.2,189,351)<Payment>,
+boa1xzva00v5...6fau(847,222.2,189,351)<Payment>, boa1xzwq00g4...zqcq(847,222.2,189,351)<Payment>, boa1xzwp00er...hksl(847,222.2,189,351)<Payment>,
+boa1xzwt00lp...4kn7(847,222.2,189,351)<Payment>, boa1xzwv00cn...ym22(847,222.2,189,351)<Payment>, boa1xzuz00c9...g4vn(847,222.2,189,351)<Payment>,
+boa1xzuy00uc...wk7r(847,222.2,189,351)<Payment>, boa1xzuw00a3...lhc2(847,222.2,189,351)<Payment>, boa1xrxg00w7...mnql(847,222.2,189,351)<Payment>,
+boa1xrxw00jq...vamc(847,222.2,189,351)<Payment>, boa1xrxj00lr...5h4j(847,222.2,189,351)<Payment>, boa1xrxn00qp...vydk(847,222.2,189,351)<Payment>,
+boa1xrxk00ns...awev(847,222.2,189,351)<Payment>, boa1xrxe002z...mavh(847,222.2,189,351)<Payment>, boa1xrvz0049...9p76(847,222.2,189,351)<Payment>,
+boa1xrvy00l7...jdwl(847,222.2,189,351)<Payment>, boa1xrvw00gd...edn6(847,222.2,189,351)<Payment>, boa1xrvs005j...tlzv(847,222.2,189,351)<Payment>,
+boa1xrwr00lx...y67p(847,222.2,189,351)<Payment>, boa1xrwy00hg...t6jx(847,222.2,189,351)<Payment>, boa1xrwf003d...zwrk(847,222.2,189,351)<Payment>,
+boa1xrww00lt...s9w9(847,222.2,189,351)<Payment>, boa1xrwn00nr...njc0(847,222.2,189,351)<Payment>, boa1xrwe0086...jc9g(847,222.2,189,351)<Payment>,
+boa1xrwm00mc...07f2(847,222.2,189,351)<Payment>, boa1xrwa00ff...5s8t(847,222.2,189,351)<Payment>, boa1xruv00nm...46k2(847,222.2,189,351)<Payment>, txHash: 0xa14b94999f7e3c6c6baabb5cc0db1cbedbed1bcb2e97f5532c41a5cd34bba08986c0ff7fcb0c4542c4e0aa682154a0a4214f0af1593b079d140129a95cf2a8f5
+2021-11-10 04:36:04,913 [32mInfo[0m [agora.consensus.Ledger] - Last known block: #0 (0x710db7c51dced26a37f258217922156b86da472ed44396efde2e2c259faa705209c3ca714c2228345fdff0beaaa0a022649991f10e21159c7718e12dd6dcb5e7)
+2021-11-10 04:36:04,921 [32mInfo[0m [SCP] - LocalNode::LocalNode@0 qSet: f77137
+2021-11-10 04:36:04,930 [32mInfo[0m [SCP] - LocalNode::updateQuorumSet b7f750
+2021-11-10 04:36:04,932 [32mInfo[0m [agora.node.Runner] - Admin interface is listening on http://0.0.0.0:2827
+2021-11-10 04:36:04,933 [32mInfo[0m [agora.node.Runner] - Node is listening on interface: http://0.0.0.0:2826
