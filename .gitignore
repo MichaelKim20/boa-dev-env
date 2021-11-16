@@ -1,5 +1,6 @@
 # The network is configured that way
 agora/.cache/
+agora/log/
 stoa/data/
 stoa/logs/
 
