@@ -20,17 +20,19 @@ interfaces:
   - type:    http
     address: 0.0.0.0
     port:    2826
+  - type:    tcp
+    address: 0.0.0.0
+    port:    2735
 
 consensus:
   block_interval:
-    seconds: 180
+    seconds: 10
   validator_cycle: 20
 
 validator:
   enabled: true
   # We use first of Genesis Block enrollments: val7: boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh
   seed: SAWI3JZWDDSQR6AX4DRG2OMS26Y6XY4X2WA3FK6D5UW4WTU74GUQXRZP
-  registry_address: disabled
 
 admin:
   enabled: true      # `false` by default
@@ -53,10 +55,10 @@ logging:
     propagate: true
     file: log/root.log
 
-  agora.node.Ledger:
+  agora:
     level: Trace
     console: true
-    file: log/ledger.log
+    file: log/agora.log
 
 event_handlers:
   # URLs to push a data when a block is externalized. (path is "/block_externalized")

@@ -3,7 +3,7 @@ version: '3'
 services:
 
   agora:
-    image: "bosagora/agora:v0.26.0"
+    image: "bosagora/agora:v0.26.1"
     ports:
       - "2826:2826"
       - "2827:2827"
@@ -24,7 +24,7 @@ services:
       MYSQL_ROOT_PASSWORD: "12345678"
 
   stoa:
-    image: "boadevops/stoa:test"
+    image: "boadevops/stoa:v0.2.3"
     depends_on:
       - "agora"
       - "mysql"
@@ -34,7 +34,7 @@ services:
       - "./stoa/:/stoa/wd/"
 
   toolsdev:
-    image: "boadevops/toolsdev:v0.1.0"
+    image: "boadevops/toolsdev:latest"
     depends_on:
       - "agora"
     ports:
