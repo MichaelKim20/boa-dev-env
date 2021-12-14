@@ -3,8 +3,21 @@ server:
   port: 3836
   private_port: 3837
   agora_endpoint: http://agora:2826
+
+  # The signed certificate file path
+  ssl_certificate:
+
+  # The associated private key file path
+  ssl_certificate_key:
+
   #Votera required
   require_votera: false
+
+  #Sendgrid required
+  require_sendgrid: false
+
+  #Excluded Addresses
+  excludedAddresses: []
 
 database:
   host : "mysql"
@@ -24,10 +37,10 @@ logging:
 
 consensus:
   # 2021-01-01:00:00:00 GMT
-  genesis_timestamp: 1609459200
+  genesis_timestamp: 1639465518
 
   # The interval at which a block is created(second)
-  block_interval: 600
+  block_interval: 30
 
   # The cycle length for a validator
   validator_cycle: 20

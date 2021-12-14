@@ -26,8 +26,9 @@ interfaces:
 
 consensus:
   block_interval:
-    seconds: 10
+    seconds: 30
   validator_cycle: 20
+  genesis_timestamp: 1639465518
 
 validator:
   enabled: true
