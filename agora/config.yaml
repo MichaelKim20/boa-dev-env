@@ -10,6 +10,7 @@
 # ./build/agora -c devel/config-single.yaml
 
 node:
+  realm: "localhost"
   testing: true
   limit_test_validators: 1
   data_dir: .cache
@@ -20,46 +21,56 @@ interfaces:
   - type:    http
     address: 0.0.0.0
     port:    2826
-  - type:    tcp
-    address: 0.0.0.0
-    port:    2735
 
 consensus:
   block_interval:
     seconds: 30
   validator_cycle: 20
-  genesis_timestamp: 1639465518
 
 validator:
   enabled: true
-  # We use first of Genesis Block enrollments: val7: boa1xrval7gwhjz4k9raqukcnv2n4rl4fxt74m2y9eay6l5mqdf4gntnzhhscrh
-  seed: SAWI3JZWDDSQR6AX4DRG2OMS26Y6XY4X2WA3FK6D5UW4WTU74GUQXRZP
+  # We use first of Genesis Block enrollments: val5: boa1xrval5rzmma29zh4aqgv3mvcarhwa0w8rgthy3l9vaj3fywf9894ycmjkm8
+  seed: SAZO4WA5SXUN3J6XBXZCFPXJJZ62IQAJYAG2KBVWF2QZKTU2WK3QTNMV
+  registry_address: http://agora:2826/
+  addresses_to_register:
+    - http://agora:2826/
+
+registry:
+  enabled: true
+  address: 127.0.0.1
+  # Use a non-priviledged port to avoid a clash with the system resolver
+  port: 5335
+  validators:
+    authoritative: true
+    primary: localhost
+    soa:
+      email: no@no.no
+  flash:
+    authoritative: true
+    primary: localhost
+    soa:
+      email: no@no.no
 
 admin:
-  enabled: true      # `false` by default
-  tls: false         # Use local tls context - `true` by default
-  address: 0.0.0.0   # Private
-  port: 2827         # 0xB0B
+  enabled: true
+  tls: false
+  address: 0.0.0.0
+  port:    2827
   username: admin
   pwd: s3cr3t
 
 # The node will self-ban but this section needs at least one entry
 network:
-  - http://agora:2826/
+  - https://agora:2826/
 
-# You might want to change this to one of:
-# Trace, Info, Warn, Error, Fatal, None (default)
 logging:
   root:
     level: Info
     console: true
-    propagate: true
-    file: log/root.log
-
-  agora:
-    level: Trace
-    console: true
-    file: log/agora.log
+  # agora:
+  #   level: Trace
+  #   console: false
+  #   file: .single/log/agora.log
 
 event_handlers:
   # URLs to push a data when a block is externalized. (path is "/block_externalized")
