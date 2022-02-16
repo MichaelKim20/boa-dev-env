@@ -37,7 +37,7 @@ logging:
 
 consensus:
   # 2021-01-01:00:00:00 GMT
-  genesis_timestamp: 1641895084
+  genesis_timestamp: 1644980571
 
   # The interval at which a block is created(second)
   block_interval: 30

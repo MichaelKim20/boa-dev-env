@@ -26,7 +26,7 @@ consensus:
   block_interval:
     seconds: 30
   validator_cycle: 20
-  genesis_timestamp: 1641895084
+  genesis_timestamp: 1644980571
 
 validator:
   enabled: true
